@@ -1,0 +1,18 @@
+[default]
+MYSQL_MIN_POOL_SIZE = 5
+MYSQL_MAX_POOL_SIZE = 50
+MYSQL_POOL_RECYCLE_SECONDS = 600  # replace idle connection after this amount of seconds
+OPENSEARCH_USE_SSL=false
+
+[unit_tests]
+MYSQL_HOST = "mysql-service"
+MYSQL_PORT = 3306
+MYSQL_USER = "root"  # should be the same as in .drone.yml and docker-compose.yaml
+MYSQL_PASSWORD = "password"  # should be the same as in .drone.yml and docker-compose.yaml
+MYSQL_DB_NAME = "unittest_wotnot"
+OPENSEARCH_HOST="opensearch-service"
+OPENSEARCH_PORT=9200
+OPENSEARCH_LOGIN="admin"
+OPENSEARCH_PASSWORD="admin"
+OPENSEARCH_USE_SSL=false
+OPENSEARCH_MESSAGES_INDEX_NAME="unittest_messages"
